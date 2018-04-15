@@ -261,25 +261,25 @@ if(packet[13] == 0)
 
 这个实验是在Mininet 中定义一个如下的网络拓扑，然后使用POX充当控制器，而POX将Router收到的所有包发给rc来解析并处理。rc由我们的sr_router.c程序编译得到。这样就在SDN上虚拟出了一个传统的路由器。
 
-![Capture](C:\Users\broth\Desktop\sr\Capture.PNG)
+![Capture](https://github.com/fengziyue/Simple-Router/blob/master/sr/Capture.PNG)
 
 所以，我们我们先用`run_pox.sh`运行POX，然后用`run_mininet.sh`创建虚拟网络。最后使用编译出的rc程序充当路由器。
 
 实际ping 效果如下：
 
-![Capture1](C:\Users\broth\Desktop\sr\Capture1.PNG)
+![Capture1](https://github.com/fengziyue/Simple-Router/blob/master/sr/Capture1.PNG)
 
-![Capture2](C:\Users\broth\Desktop\sr\Capture2.PNG)
+![Capture2](https://github.com/fengziyue/Simple-Router/blob/master/sr/Capture2.PNG)
 
 rc程序输出如下：
 
-![Capture3](C:\Users\broth\Desktop\sr\Capture3.PNG)
+![Capture3](https://github.com/fengziyue/Simple-Router/blob/master/sr/Capture3.PNG)
 
 图中，第一个长度为42的包是ARP request 包，后面的长度为98的包为ICMP request 包。
 
 使用wires hark抓包分析如下：
 
-![Capture4](C:\Users\broth\Desktop\sr\Capture4.PNG)
+![Capture4](https://github.com/fengziyue/Simple-Router/blob/master/sr/Capture4.PNG)
 
 可以看到ARP request，reply 和 ICMP request, reply。
 
